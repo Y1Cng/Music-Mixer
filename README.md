@@ -1,4 +1,4 @@
-# Music-Mixer
+# Interactive Music Mixer Web App
 
 This is the repo of the Music-Mixer Assignment for MMED-1055-(01)-25S - Multimedia Authoring 2.
 
