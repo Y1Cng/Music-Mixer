@@ -10,7 +10,7 @@ This is the repo of the Music-Mixer Assignment for MMED-1055-(01)-25S - Multimed
 
 ## Overview
 
-A browser-based audio mixing tool that allows users to drag and drop sound clips to create custom music compositions. Inspired by Incredibox, this project focuses on:
+A browser-based audio mixing tool that allows users to drag and drop sound clips to create custom music compositions. This project focuses on:
 
 - Web Audio API integration
 - HTML5 Drag-and-Drop functionality
