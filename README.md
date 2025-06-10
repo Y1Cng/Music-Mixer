@@ -17,12 +17,6 @@ A browser-based audio mixing tool that allows users to drag and drop sound clips
 - Responsive visual design
 - Interactive UI animations
 
-## Technologies
-
-- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
-- **Audio Engine**: Web Audio API / Howler.js _(choose one)_
-- **Version Control**: Git/GitHub with Agile workflow
-
 ## Project Structure
 
 ### GRADING RUBRIC
