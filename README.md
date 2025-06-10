@@ -4,7 +4,35 @@ This is the repo of the Music-Mixer Assignment for MMED-1055-(01)-25S - Multimed
 
 ## Assignment Requirements
 
+# Music Mixer - Interactive Audio Web App
+
+![Project Preview](images/preview.jpg)
+
+## Overview
+
+A browser-based audio mixing tool that allows users to drag and drop sound clips to create custom music compositions. Inspired by Incredibox, this project focuses on:
+
+- Web Audio API integration
+- HTML5 Drag-and-Drop functionality
+- Responsive visual design
+- Interactive UI animations
+
+## Technologies
+
+- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
+- **Audio Engine**: Web Audio API / Howler.js _(choose one)_
+- **Version Control**: Git/GitHub with Agile workflow
+
+## Project Structure
+
 ### GRADING RUBRIC
+
+- Folder Setup & Naming: 1
+- GitHub Best Practices: 4
+- Design/Layout: 5
+- Research/Planning: 5
+- Functionality, Interactivity and Formatting: 10
+- Presentation: 5
 
 ## Installation
 
