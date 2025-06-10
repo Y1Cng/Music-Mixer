@@ -2,10 +2,6 @@
 
 This is the repo of the Music-Mixer Assignment for MMED-1055-(01)-25S - Multimedia Authoring 2.
 
-## Assignment Requirements
-
-# Music Mixer - Interactive Audio Web App
-
 ![Project Preview](images/preview.jpg)
 
 ## Overview
