@@ -53,4 +53,3 @@ To uses, open index.html in the browser of your choice.
 ## Credits
 
 Yi Cheng
-Mikhail Kirs
