@@ -18,6 +18,20 @@ let playingAudios = [];
 let isPlaying = false;
 
 // Functions
+function setPlayState() {
+  // I set play button active
+  isPlaying = true;
+  playButton.classList.add('active');
+  pauseButton.classList.remove('active');
+}
+
+function setPauseState() {
+  // I set pause button active
+  isPlaying = false;
+  pauseButton.classList.add('active');
+  playButton.classList.remove('active');
+}
+
 function handleStartDrag() {
   dragPiece = this;
   this.style.opacity = '0.5'; // I make it transparent when dragging
@@ -30,9 +44,7 @@ function handleDragEnd() {
 
 function handleOver(event) {
   // I need to allow the drop to work
-  if (event.preventDefault) {
-    event.preventDefault();
-  }
+  event.preventDefault();
   this.classList.add('active');
 }
 
@@ -42,9 +54,7 @@ function handleLeave() {
 
 function handleDrop(event) {
   // I need to handle the drop properly
-  if (event.preventDefault) {
-    event.preventDefault();
-  }
+  event.preventDefault();
   
   dragPiece.style.opacity = '1';
   dragPiece.style.transform = 'scale(1)';
@@ -90,9 +100,7 @@ function handleDrop(event) {
     audioElement.play();
     
     if (!isPlaying) {
-      isPlaying = true;
-      playButton.classList.add('active');
-      pauseButton.classList.remove('active');
+      setPlayState();
     }
   }
 }
@@ -105,9 +113,7 @@ function playAudio() {
   });
   
   if (!isPlaying) {
-    isPlaying = true;
-    playButton.classList.add('active');
-    pauseButton.classList.remove('active');
+    setPlayState();
   }
 }
 
@@ -118,9 +124,7 @@ function pauseAudio() {
   });
   
   if (isPlaying) {
-    isPlaying = false;
-    pauseButton.classList.add('active');
-    playButton.classList.remove('active');
+    setPauseState();
   }
 }
 
@@ -133,9 +137,7 @@ function restartAudio() {
   });
   
   if (!isPlaying) {
-    isPlaying = true;
-    playButton.classList.add('active');
-    pauseButton.classList.remove('active');
+    setPlayState();
   }
 }
 
@@ -158,71 +160,18 @@ function resetPositions() {
     if (diskImage) {
       // I get the track ID to know which card it belongs to
       const trackId = diskImage.getAttribute("data-track");
+      const trackNumber = trackId.replace("disk", "");
+      const cardPosition = trackNumber;
       
       // I find the correct card and put the image back
-      if (trackId === "disk1") {
-        const card1 = disksContainer.querySelector(".disk-card:nth-child(1)");
-        card1.appendChild(diskImage);
-      }
-      if (trackId === "disk2") {
-        const card2 = disksContainer.querySelector(".disk-card:nth-child(2)");
-        card2.appendChild(diskImage);
-      }
-      if (trackId === "disk3") {
-        const card3 = disksContainer.querySelector(".disk-card:nth-child(3)");
-        card3.appendChild(diskImage);
-      }
-      if (trackId === "disk4") {
-        const card4 = disksContainer.querySelector(".disk-card:nth-child(4)");
-        card4.appendChild(diskImage);
-      }
-      if (trackId === "disk5") {
-        const card5 = disksContainer.querySelector(".disk-card:nth-child(5)");
-        card5.appendChild(diskImage);
-      }
-      if (trackId === "disk6") {
-        const card6 = disksContainer.querySelector(".disk-card:nth-child(6)");
-        card6.appendChild(diskImage);
-      }
+      const targetCard = disksContainer.querySelector(".disk-card:nth-child(" + cardPosition + ")");
+      targetCard.appendChild(diskImage);
     }
     
     zone.classList.remove("has-disk");
     const icon = zone.querySelector("i");
     if (icon) icon.style.display = "block";
   });
-
-  // I reset image styles
-  const disk1Image = document.querySelector("[data-track='disk1']");
-  const disk2Image = document.querySelector("[data-track='disk2']");
-  const disk3Image = document.querySelector("[data-track='disk3']");
-  const disk4Image = document.querySelector("[data-track='disk4']");
-  const disk5Image = document.querySelector("[data-track='disk5']");
-  const disk6Image = document.querySelector("[data-track='disk6']");
-  
-  if (disk1Image) {
-    disk1Image.style.opacity = "1";
-    disk1Image.style.transform = "scale(1)";
-  }
-  if (disk2Image) {
-    disk2Image.style.opacity = "1";
-    disk2Image.style.transform = "scale(1)";
-  }
-  if (disk3Image) {
-    disk3Image.style.opacity = "1";
-    disk3Image.style.transform = "scale(1)";
-  }
-  if (disk4Image) {
-    disk4Image.style.opacity = "1";
-    disk4Image.style.transform = "scale(1)";
-  }
-  if (disk5Image) {
-    disk5Image.style.opacity = "1";
-    disk5Image.style.transform = "scale(1)";
-  }
-  if (disk6Image) {
-    disk6Image.style.opacity = "1";
-    disk6Image.style.transform = "scale(1)";
-  }
 
   // I stop all audios
   playingAudios.forEach(function(audio) {
@@ -241,13 +190,11 @@ function resetPositions() {
 function openLightbox() {
   // I open the instructions
   lightbox.classList.add("active");
-  return false;
 }
 
 function closeLightbox() {
   // I close the instructions
   lightbox.classList.remove("active");
-  return false;
 }
 
 // Event listeners
