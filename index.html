@@ -1,11 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MUSIC Mixer</title>
+  <link href="./css/main.css" rel="stylesheet" />
+  <link href="./css/grid.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
+
 <body>
-    
+  <header>
+    <div class="logo">
+      <i class="fas fa-music"></i>
+      <span>MUSIC MIXER</span>
+    </div>
+    <nav id="main-nav">
+      <h2 class="hidden">Main Nav</h2>
+      <ul>
+        <li><a href="#lightbox1" id="howToUseBtn">How to use</a></li>
+        <li><a href="#" id="resetButton"><i class="fas fa-sync-alt"></i> Reset</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="layout-container">
+    <!-- Disk Library Panel -->
+    <div class="panel">
+      <h2 class="panel-title"><i class="fa-solid fa-compact-disc"></i> Disk Library</h2>
+      <section id="Disks" class="grid-con col-span-full">
+        <div class="disk-card">
+          <img src="images/disk1.svg" class="disks-image" alt="disk1" data-track="disk1" draggable="true" />
+          <div class="disk-name">disk1</div>
+        </div>
+        <div class="disk-card">
+          <img src="images/disk2.svg" class="disks-image" alt="disk2" data-track="disk2" draggable="true" />
+          <div class="disk-name">disk2</div>
+        </div>
+        <div class="disk-card">
+          <img src="images/disk3.svg" class="disks-image" alt="disk3" data-track="disk3" draggable="true" />
+          <div class="disk-name">disk3</div>
+        </div>
+        <div class="disk-card">
+          <img src="images/disk4.svg" class="disks-image" alt="disk4" data-track="disk4" draggable="true" />
+          <div class="disk-name">disk4</div>
+        </div>
+        <div class="disk-card">
+          <img src="images/disk5.svg" class="disks-image" alt="disk5" data-track="disk5" draggable="true" />
+          <div class="disk-name">disk5</div>
+        </div>
+        <div class="disk-card">
+          <img src="images/disk6.svg" class="disks-image" alt="disk6" data-track="disk6" draggable="true" />
+          <div class="disk-name">disk6</div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Mixer Panel -->
+    <div class="panel">
+      <h2 class="panel-title"><i class="fas fa-sliders-h"></i> Mixer Board</h2>
+      <div class="mixer-grid">
+        <div class="drop-zone-container">
+          <div class="drop-zone-label">Track 1</div>
+          <div class="drop-zone z1">
+            <i class="fas fa-plus-circle"></i>
+          </div>
+        </div>
+        <div class="drop-zone-container">
+          <div class="drop-zone-label">Track 2</div>
+          <div class="drop-zone z2">
+            <i class="fas fa-plus-circle"></i>
+          </div>
+        </div>
+        <div class="drop-zone-container">
+          <div class="drop-zone-label">Track 3</div>
+          <div class="drop-zone z3">
+            <i class="fas fa-plus-circle"></i>
+          </div>
+        </div>
+        <div class="drop-zone-container">
+          <div class="drop-zone-label">Track 4</div>
+          <div class="drop-zone z4">
+            <i class="fas fa-plus-circle"></i>
+          </div>
+        </div>
+        <div class="drop-zone-container">
+          <div class="drop-zone-label">Track 5</div>
+          <div class="drop-zone z5">
+            <i class="fas fa-plus-circle"></i>
+          </div>
+        </div>
+        <div class="drop-zone-container">
+          <div class="drop-zone-label">Track 6</div>
+          <div class="drop-zone z6">
+            <i class="fas fa-plus-circle"></i>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Controls Panel -->
+      <div id="control-panel">
+        <div class="controls-grid">
+          <div class="control-group">
+            <div class="control-title">Controls</div>
+            <div class="transport-controls">
+              <button id="playButton" class="control-btn"><i class="fas fa-play"></i></button>
+              <button id="pauseButton" class="control-btn"><i class="fas fa-pause"></i></button>
+              <button id="stopButton" class="control-btn"><i class="fas fa-stop"></i></button>
+            </div>
+          </div>
+          
+          <div class="control-group">
+            <div class="control-title">Volume</div>
+            <div class="volume-control">
+              <div class="volume-label">
+                <span>0%</span>
+                <span>100%</span>
+              </div>
+              <input id="volumeControl" type="range" min="0" max="100" step="1" value="80" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Audio Elements -->
+  <audio id="disk1" src="audio/EBM_Beat_84-02.wav"></audio>
+  <audio id="disk2" src="audio/EBM_Beat_84-03.wav"></audio>
+  <audio id="disk3" src="audio/EBM_EfEmBass_84_A.wav"></audio>
+  <audio id="disk4" src="audio/EBM_FlightBass_84_C.wav"></audio>
+  <audio id="disk5" src="audio/EBM_Glasswave_84_C.wav"></audio>
+  <audio id="disk6" src="audio/EBM_Percussion_84-02.wav"></audio>
+
+  <!-- Lightbox -->
+  <section class="lightbox" id="lightbox1">
+    <div class="lightbox_content">
+      <a href="#" class="lightbox_close">&times;</a>
+      <article>
+        <h3 class="lb_heading">How to Play: The Fun and Easy Way!</h3>
+        <p class="lb_text">
+          Welcome to the MUSIC Mixer! This is your ultimate guide to creating amazing music with ease. 
+          Just drag and drop disks from the library into the mixer tracks, adjust the volume, and hit play!
+          <br><br>
+          <strong>Tips:</strong>
+          <ul>
+            <li>Use the volume slider to adjust sound levels.</li>
+            <li>Reset anytime to start fresh!</li>
+          </ul>
+          Enjoy making music!
+        </p>
+      </article>
+    </div>
+  </section>
+  <script src="js/main.js"></script>
 </body>
 </html>
