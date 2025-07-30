@@ -154,9 +154,36 @@ function resetPositions() {
   const disksContainer = document.querySelector("#Disks");
   
   dropZones.forEach(function(zone) {
-    const diskCard = zone.querySelector(".disk-card");
-    if (diskCard) {
-      disksContainer.appendChild(diskCard);
+    const diskImage = zone.querySelector(".disks-image");
+    if (diskImage) {
+      // I get the track ID to know which card it belongs to
+      const trackId = diskImage.getAttribute("data-track");
+      
+      // I find the correct card and put the image back
+      if (trackId === "disk1") {
+        const card1 = disksContainer.querySelector(".disk-card:nth-child(1)");
+        card1.appendChild(diskImage);
+      }
+      if (trackId === "disk2") {
+        const card2 = disksContainer.querySelector(".disk-card:nth-child(2)");
+        card2.appendChild(diskImage);
+      }
+      if (trackId === "disk3") {
+        const card3 = disksContainer.querySelector(".disk-card:nth-child(3)");
+        card3.appendChild(diskImage);
+      }
+      if (trackId === "disk4") {
+        const card4 = disksContainer.querySelector(".disk-card:nth-child(4)");
+        card4.appendChild(diskImage);
+      }
+      if (trackId === "disk5") {
+        const card5 = disksContainer.querySelector(".disk-card:nth-child(5)");
+        card5.appendChild(diskImage);
+      }
+      if (trackId === "disk6") {
+        const card6 = disksContainer.querySelector(".disk-card:nth-child(6)");
+        card6.appendChild(diskImage);
+      }
     }
     
     zone.classList.remove("has-disk");
@@ -164,12 +191,38 @@ function resetPositions() {
     if (icon) icon.style.display = "block";
   });
 
-  // I reset card styles
-  const allCards = document.querySelectorAll(".disk-card");
-  allCards.forEach(function(card) {
-    card.style.opacity = "1";
-    card.style.transform = "scale(1)";
-  });
+  // I reset image styles
+  const disk1Image = document.querySelector("[data-track='disk1']");
+  const disk2Image = document.querySelector("[data-track='disk2']");
+  const disk3Image = document.querySelector("[data-track='disk3']");
+  const disk4Image = document.querySelector("[data-track='disk4']");
+  const disk5Image = document.querySelector("[data-track='disk5']");
+  const disk6Image = document.querySelector("[data-track='disk6']");
+  
+  if (disk1Image) {
+    disk1Image.style.opacity = "1";
+    disk1Image.style.transform = "scale(1)";
+  }
+  if (disk2Image) {
+    disk2Image.style.opacity = "1";
+    disk2Image.style.transform = "scale(1)";
+  }
+  if (disk3Image) {
+    disk3Image.style.opacity = "1";
+    disk3Image.style.transform = "scale(1)";
+  }
+  if (disk4Image) {
+    disk4Image.style.opacity = "1";
+    disk4Image.style.transform = "scale(1)";
+  }
+  if (disk5Image) {
+    disk5Image.style.opacity = "1";
+    disk5Image.style.transform = "scale(1)";
+  }
+  if (disk6Image) {
+    disk6Image.style.opacity = "1";
+    disk6Image.style.transform = "scale(1)";
+  }
 
   // I stop all audios
   playingAudios.forEach(function(audio) {
