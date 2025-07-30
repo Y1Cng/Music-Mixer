@@ -1,0 +1,68 @@
+/* Main Layout Container */
+.layout-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 25px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Disks Library Grid */
+#Disks {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  overflow-y: auto;
+  max-height: 70vh;
+  padding: 5px;
+}
+
+/* Mixer Board Grid */
+.mixer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  height: 100%;
+}
+
+/* Controls Panel Grid */
+#control-panel {
+  grid-column: 1 / -1;
+  margin-top: 25px;
+  padding: 25px;
+  background: #18182c;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(125, 0, 255, 0.1);
+}
+
+.controls-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Responsive Grid Design */
+@media (max-width: 1024px) {
+  .layout-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .mixer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .controls-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .mixer-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .controls-grid {
+    grid-template-columns: 1fr;
+  }
+}
